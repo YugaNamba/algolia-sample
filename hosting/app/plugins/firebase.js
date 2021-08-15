@@ -9,13 +9,13 @@ if (!firebase.apps.length) {
   if (location.hostname === 'localhost') {
     console.log('🏠 ローカル開発環境')
     config = {
-      apiKey: "",
-      authDomain: "",
-      projectId: "",
-      storageBucket: "",
-      messagingSenderId: "",
-      appId: "",
-      measurementId: ""
+      apiKey: "AIzaSyDLogbppEsRdvR6zGZAUOXfQ6RMYdU7JsA",
+      authDomain: "extentions-sample.firebaseapp.com",
+      projectId: "extentions-sample",
+      storageBucket: "extentions-sample.appspot.com",
+      messagingSenderId: "300178241063",
+      appId: "1:300178241063:web:d1de3c72ec206eff334002",
+      measurementId: "G-E6CKPFDZLE"
     }
   } else {
     console.log('🔥 Firebase ホスティング環境')
