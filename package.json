@@ -1,5 +1,6 @@
 {
   "name": "nuxtjs-firebase-template",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YugaNamba/nuxtjs-firebase-template.git"
