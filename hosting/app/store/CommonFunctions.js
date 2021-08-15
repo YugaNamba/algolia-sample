@@ -15,6 +15,22 @@ export class CommonFunctions {
     return CommonFunctions.setCreatedAt(CommonFunctions.updateUpdatedAt(doc))
   }
 
+  static serialize(snapshot) {
+    const data = snapshot.data()
+    Object.defineProperty(data, 'id', {
+      value: snapshot.id,
+      enumerable: true,
+    })
+
+    const fromCache = snapshot.metadata.fromCache
+
+    Object.defineProperty(data, 'fromCache', {
+      value: fromCache,
+      enumerable: true,
+    })
+    return data
+  }
+
   static getData(doc) {
     if (!doc.exists) {
       console.log('No such document!')

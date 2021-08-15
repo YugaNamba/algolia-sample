@@ -1,15 +1,29 @@
 import { firestoreAction } from 'vuexfire'
+import * as algoliasearch from 'algoliasearch'
 import { db } from '@/plugins/firebase'
+
+import config from '@/algolia.config.js'
 
 import { CommonFunctions as CF } from '@/store/CommonFunctions'
 
-export const state = () => ({})
+const algoliaClient = algoliasearch(config.appId, config.apiKey)
+const userIndex = algoliaClient.initIndex('test_firestore')
+
+export const state = () => ({
+  list: []
+})
 
 const getCollection = () => {
   return db.collection('users')
 }
 
 export const actions = {
+  setListRef: firestoreAction(({ bindFirestoreRef }) => {
+    bindFirestoreRef('list', getCollection().orderBy('createdAt', 'desc'), {
+      serialize: CF.serialize
+    })
+    console.log('done')
+  }),
   add: firestoreAction(async (_, { doc }) => {
     const ref = getCollection()
     await ref.add(CF.setTimestamp(doc)).catch((e) => console.log(e))
@@ -24,8 +38,13 @@ export const actions = {
     const ref = getCollection().doc(id)
     await ref.update(doc).catch((e) => console.log(e))
   }),
+  search: async (_, { query }) => {
+    return await userIndex.search(query)
+  }
 }
 
 export const mutations = {}
 
-export const getters = {}
+export const getters = {
+  list: (state) => state.list
+}
