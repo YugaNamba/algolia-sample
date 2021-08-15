@@ -2,6 +2,16 @@ Nuxt.js x Firebase Extensions Search with Algolia sample
 
 # Setup
 
+.firebaserc
+
+```
+{
+  "projects": {
+    "default": ############,
+  }
+}
+```
+
 hosting/app/algolia.config.js
 
 ```
