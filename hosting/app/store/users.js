@@ -2,7 +2,7 @@ import { firestoreAction } from 'vuexfire'
 import * as algoliasearch from 'algoliasearch'
 import { db } from '@/plugins/firebase'
 
-import config from '@/algolia.config.js'
+import config from '@/algolia.config'
 
 import { CommonFunctions as CF } from '@/store/CommonFunctions'
 
