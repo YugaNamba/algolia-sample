@@ -90,3 +90,4 @@ sw.*
 *.swp
 
 algolia.config.js
+firebase.config.js

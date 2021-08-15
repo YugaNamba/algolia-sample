@@ -4,19 +4,13 @@ import 'firebase/firestore'
 import 'firebase/storage'
 import 'firebase/functions'
 
+import firebaseConfig from '@/firebase.config'
+
 if (!firebase.apps.length) {
   let config = {}
   if (location.hostname === 'localhost') {
     console.log('🏠 ローカル開発環境')
-    config = {
-      apiKey: "AIzaSyDLogbppEsRdvR6zGZAUOXfQ6RMYdU7JsA",
-      authDomain: "extentions-sample.firebaseapp.com",
-      projectId: "extentions-sample",
-      storageBucket: "extentions-sample.appspot.com",
-      messagingSenderId: "300178241063",
-      appId: "1:300178241063:web:d1de3c72ec206eff334002",
-      measurementId: "G-E6CKPFDZLE"
-    }
+    config = firebaseConfig
   } else {
     console.log('🔥 Firebase ホスティング環境')
     config = JSON.parse(loadTextFileAjaxSync('/__/firebase/init.json', 'application/json'))
