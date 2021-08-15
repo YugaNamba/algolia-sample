@@ -1,37 +1,31 @@
-# nuxtjs-firebase-template
+Nuxt.js x Firebase Extensions Search with Algolia sample
 
-自分がよく使うであろうテンプレート
+# Setup
 
-Nuxt.js x Firebase の構成
+hosting/app/algolia.config.js
 
-## 使い方
+```
+export default {
+  appId: ############,
+  apiKey: ############
+}
+```
 
-1. クローン
-1. Firebase Project 作る
-1. Project ID を .firebaserc の default にセット
-1. hosting/app/plugins/firebase.js の config をセット
-1. dev する
+hosting/app/firebase.config.js
 
-## 設定済み項目
+```
+export default {
+  apiKey: ############,
+  authDomain: ############,
+  projectId: ############,
+  storageBucket: ############,
+  messagingSenderId: ############,
+  appId: ############,
+  measurementId: ############
+}
+```
 
-### Nuxt.js
+# References
 
-- 言語: js
-- UI フレームワーク: Vuetify.js
-- ライブラリ
-  - firebaseui
-  - lodash
-  - luxon
-  - uuid
-  - vuexfire
-- middleware
-  - Firebase Auth ログインしてなかったら/login にリダイレクト （コメントアウトしてるけど）
-- dark: false
-- ssr: false
-
-### Firebase
-
-- Hosting
-  - /hosting/app/dist をみるようにしてる
-- Firestore
-  - indexes と rules 用意してる
+- [Nuxt.js+Algolia で全文検索可能なタスク管理アプリを実装するハンズオン！ - Qiita](https://qiita.com/mido_app/items/919839aaf33382d9bc89)
+- [Firebase Extensions | Search with Algolia](https://firebase.google.com/products/extensions/firestore-algolia-search)

@@ -1,14 +1,14 @@
 {
-  "name": "nuxtjs-firebase-template",
+  "name": "algolia-sample",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YugaNamba/nuxtjs-firebase-template.git"
+    "url": "git+https://github.com/YugaNamba/algolia-sample.git"
   },
   "bugs": {
-    "url": "https://github.com/YugaNamba/nuxtjs-firebase-template/issues"
+    "url": "https://github.com/YugaNamba/algolia-sample/issues"
   },
-  "homepage": "https://github.com/YugaNamba/nuxtjs-firebase-template#readme",
+  "homepage": "https://github.com/YugaNamba/algolia-sample#readme",
   "scripts": {
     "hosting:dev": "cd hosting/app && yarn dev",
     "hosting:deploy": "cd hosting/app && yarn build && firebase deploy --only hosting",
